@@ -1,0 +1,113 @@
+.inbox-wrapper {
+  margin-left: 15px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 📥 Inbox toolbar styling */
+.inbox-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  background-color: #ffffff;
+}
+
+.left-tools,
+.right-tools {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 8px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.icon-button:hover {
+  background-color: #dadada;
+}
+
+
+.inbox-content {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #f2f5fa;
+}
+
+.email-row {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-bottom: #e4e4e4 solid 1px;
+  gap: 10px;
+  min-width: 0;
+}
+
+.email-row:hover {
+  background-color: #f1f3f4;
+  cursor: pointer;
+}
+
+.sender {
+  font-weight: normal;
+  width: 120px;
+}
+
+.subject {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 80px;
+}
+
+.star {
+  cursor: pointer;
+  font-size: 22px;
+  color: #ccc;
+  transition: color 0.2s ease;
+}
+
+.starred {
+  color: #fbbc04;
+}
+
+.preview {
+  color: #5f6368;
+  margin-left: 8px;
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+.date,
+.attachment {
+  flex-shrink: 0;
+  margin-left: 10px;
+  color: #5f6368;
+}
+
+.email-row.selected{
+  background-color: #b1cbf8;
+  box-shadow: 1px 1px 6px rgb(199, 199, 199);
+}

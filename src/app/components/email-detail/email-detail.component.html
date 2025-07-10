@@ -1,0 +1,25 @@
+<!-- Toolbar -->
+<div class="email-toolbar">
+  <button class="back-button"(click)="close.emit()">⬅️</button>
+  <button class="icon-button" title="Archive">📤</button>
+  <button class="icon-button" title="Report spam">🐞</button>
+  <button class="icon-button" title="Delete">🗑️</button>
+  <button class="icon-button" title="Mark as unread">📩</button>
+  <button class="icon-button" title="Refresh">🔁</button>
+  <!-- More icons later: Archive, Delete, etc. -->
+</div>
+
+<!-- Header -->
+<div class="email-header">
+  <h2>{{ email.subject }}</h2>
+  <div class="email-meta">
+    <span class="sender">{{ email.sender }}</span>
+    <span class="preview">{{ email.preview }}</span>
+    <span class="date">{{ email.date }}</span>
+  </div>
+</div>
+
+<!-- Email Body -->
+<div class="email-body">
+  <p>{{ email.body }}</p>
+</div>

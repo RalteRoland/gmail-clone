@@ -1,0 +1,139 @@
+/* Main shell */
+.app-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Left Sidebar */
+app-sidebar {
+  width: 70px;
+  flex-shrink: 0;
+  background-color: #e9eef6;
+}
+
+/* Main (Navbar + Content) */
+.main-area {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Top Navbar */
+app-navbar {
+  height: 64px;
+  background-color: #f1f3f4;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+}
+
+/* Row: Inbox + Right Sidebar */
+.content-area {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Inbox (Middle area) */
+app-inbox {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Right Sidebar */
+app-right-sidebar {
+  margin-left: 10px;
+  background-color: #f1f3f4;
+  border-left: 0px solid #cfd8dc;
+  flex-shrink: 0;
+}
+
+.inbox-wrapper {
+  flex: 1;
+  height: calc(100vh - 64px);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+
+.compose-popup {
+  position: fixed;
+  bottom: 20px;
+  right: 80px;
+  width: 600px;
+  height: 600px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+  overflow: hidden;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.compose-header {
+  background-color: #f3faff;
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.compose-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.compose-body input,
+.compose-body textarea {
+  border: none;
+  border-bottom: 1px solid #e6e6e6;
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+}
+
+.compose-body textarea {
+  height: 300px;
+  resize: vertical;
+  border: none;
+}
+
+.compose-footer {
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.send-btn {
+  font-size: 15px;
+  display: flex;
+  background-color: #1766ce;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.send-btn:hover {
+  background-color: #0f4c81;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
