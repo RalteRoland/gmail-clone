@@ -23,7 +23,7 @@ app-sidebar {
 /* Top Navbar */
 app-navbar {
   height: 64px;
-  background-color: #f1f3f4;
+  background-color: #F8FAFD;
   display: flex;
   align-items: center;
   padding: 0 16px;
@@ -34,6 +34,7 @@ app-navbar {
   display: flex;
   flex: 1;
   overflow: hidden;
+  background-color: #F8FAFD;
 }
 
 /* Inbox (Middle area) */

@@ -25,9 +25,8 @@
   background-color: #e9eef6;
   padding: 6px 12px;
   border-radius: 24px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 600px;
+  max-width: 700px;
 }
 
 .search-icon {
@@ -44,14 +43,36 @@
   flex: 1;
 }
 
+.slider{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e9eef6;
+  border-radius: 50%;
+  padding: 10px;
+  width: 40px;
+}
+
+.slider:hover{
+  background-color: #dfe1e5;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
 .right{
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
   margin-right: 18px;
 }
 
 .icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #F8FAFD;
   font-size: 20px;
   padding: 5px;
 }
@@ -71,7 +92,6 @@
   background-color: #f1f3f4;
   border-radius: 50%;
   cursor: pointer;
-  transition: background-color 0.2s ease;
   box-sizing: border-box;
 }
 
@@ -79,13 +99,18 @@
   background-color:  #d6d6d6;
 }
 
+.question-icon:hover .question-inner {
+  background-color: #d6d6d6 /* or any hover color you want */
+}
+
+
 .question-inner {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 22px;
   height: 22px;
-  border: 3px solid #5f5f5f;
+  border: 2px solid #5f5f5f;
   background-color: #f1f3f4;
   border-radius: 50%;
   font-size: 16px;
@@ -112,15 +137,23 @@
   transition: background-color 0.2s;
 }
 
+p{
+  font-size: 12px;
+  color: #202124;
+  margin-bottom: 0px;
+  padding-left: 25px;
+
+}
 .dropdown-item:hover {
   background-color: #d7dce6;
 }
+
 
 .status-button {
   display: flex;
   align-items: center;
   font-weight: bold;
-  padding: 4px 15px;
+  padding: 4px 15px;;
   background-color: #dde5eb;
   border: none;
   border-radius: 20px;

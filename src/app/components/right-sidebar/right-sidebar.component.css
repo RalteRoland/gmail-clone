@@ -1,6 +1,6 @@
 .right-sidebar {
   width: 60px;
-  background-color: #f1f3f4;
+  background-color: #F8FAFD;
   height: calc(100vh - 64px);
   display: flex;
   flex-direction: column;
@@ -38,4 +38,19 @@
   border-top: 1px solid #cfd8dc;
   padding-top: 15px;
   margin-top: 50px;
+}
+
+.check{
+  color: rgb(0, 102, 255);
+}
+
+.user {
+  color: #0b5ad8;
+}
+
+.bulb{
+  font-size: small;
+  padding: 3px;
+  background-color: rgb(255, 204, 0);
+  color: rgb(255, 255, 255);
 }

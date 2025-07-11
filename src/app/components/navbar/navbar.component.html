@@ -7,6 +7,7 @@
     <div class="search-box">
       <span class="search-icon">🔍︎</span>
       <input type="text" placeholder="Search mail" />
+      <i class="bi bi-sliders2 slider"></i>
     </div>
   </div>
 
@@ -26,19 +27,22 @@
     </button>
 
     <ul class="dropdown-menu dropdown-menu-end">
-      <li><button class="dropdown-item" (click)="setStatus('Active')">🟢 Automatic</button></li>
-      <li><button class="dropdown-item" (click)="setStatus('Do Not Disturb')">⛔ Do Not Disturb</button></li>
-      <li><button class="dropdown-item" (click)="setStatus('Away')">🌙 Set Away</button></li>
-      <li><button class="dropdown-item" (click)="setStatus('Invisible')">👻 Invisible</button></li>
+      <li><button class="dropdown-item" (click)="setStatus('Active')">🟢 Automatic <p>Based on chat activity</p> </button>
+      </li>
+      <li><button class="dropdown-item" (click)="setStatus('Do Not Disturb')">⛔ Do Not Disturb <p>Mute chat notifications</p></button>
+      </li>
+      <li><button class="dropdown-item" (click)="setStatus('Away')">🌙 Set Away <p>Turn off notifications</p></button>
+      </li>
+      <li><button class="dropdown-item" (click)="setStatus('Invisible')">👻 Invisible <p>Appear offline</p></button>
+      </li>
     </ul>
   </div>
 
   <div class="right">
-    <div class="question-icon">
-      <span class="question-inner">?</span>
-    </div>
-    <span class="icon">⚙️</span>
-    <span class="icon">🔲</span>
+    <i class="bi bi-question-circle icon" title="Support"></i>
+    <i class="bi bi-gear icon" title="Settings"></i>
+    <i class="bi bi-stars icon" title="Ask"></i>
+    <i class="bi bi-ui-checks-grid icon" title="Apps"></i>
     <div class="profile-container">
       <img src="https://www.google.com/u/6/ac/images/logo.gif?uid=109382100015152382239&service=google_gsuite" alt="">
       <span class="profile">R</span>
