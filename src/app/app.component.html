@@ -1,20 +1,10 @@
 <div class="app-container">
-  <!-- LEFT SIDEBAR -->
   <app-sidebar (toggleSidebar)="toggleSidebar()"></app-sidebar>
-
-  <!-- MAIN AREA -->
   <div class="main-area">
-
-    <!-- NAVBAR -->
     <app-navbar></app-navbar>
 
-    <!-- Content Area -->
     <div class="content-area">
-
-      <!-- EXPANDED SIDEBAR -->
       <app-sidebar-expanded *ngIf="isExpandedSidebar" (compose)="openComposePopup()"></app-sidebar-expanded>
-
-      <!-- INBOX or EMAIL DETAIL -->
       <div class="inbox-wrapper">
         <ng-container *ngIf="!selectedEmail; else detailView">
           <app-inbox (emailClick)="openEmail($event)"></app-inbox>
@@ -25,10 +15,8 @@
         </ng-template>
       </div>
 
-      <!-- RIGHT SIDEBAR -->
       <app-right-sidebar></app-right-sidebar>
 
-      <!-- COMPOSE POPUP -->
       <div class="compose-popup" *ngIf="isComposeOpen">
         <div class="compose-header">
           <span>New Message</span>
@@ -44,8 +32,8 @@
         <div class="compose-footer">
           <button class="send-btn">Send</button>
         </div>
-      </div>
 
+      </div>
     </div>
   </div>
 </div>

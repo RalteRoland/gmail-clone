@@ -46,7 +46,6 @@ app-inbox {
 
 /* Right Sidebar */
 app-right-sidebar {
-  margin-left: 10px;
   background-color: #f1f3f4;
   border-left: 0px solid #cfd8dc;
   flex-shrink: 0;
