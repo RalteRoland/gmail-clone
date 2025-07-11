@@ -17,8 +17,7 @@
   <div class="inbox-content">
     <div class="email-row" *ngFor="let email of emails" (click)="onEmailClick(email)" [ngClass]="{'selected': email.selected}">
       <input type="checkbox" [checked]="email.selected" (click)="toggleStar(email); $event.stopPropagation()"(change)="toggleSelected(email)" />
-      <span class="star" [ngClass]="{ 'starred': email.starred }"(click)="toggleStar(email); $event.stopPropagation()"
-      (click)="toggleStar(email)">{{ email.starred ? '★' : '☆' }}</span>
+      <span class="star" [ngClass]="{ 'starred': email.starred }"(click)="toggleStar(email); $event.stopPropagation()">{{ email.starred ? '★' : '☆' }}</span>
       <span class="sender">{{ email.sender }}</span>
       <span class="subject">{{ email.subject }}</span>
       <span class="preview">{{ email.preview }}</span>

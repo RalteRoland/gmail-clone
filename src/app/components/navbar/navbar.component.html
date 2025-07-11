@@ -10,10 +10,35 @@
     </div>
   </div>
 
+  <!-- STATUS DROPDOWN -->
+  <div class="dropdown">
+    <button
+      class="status-button dropdown-toggle"
+      type="button"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      <span
+        class="status-dot"
+        [ngStyle]="{ 'background-color': statusColorMap[currentStatus] }"
+      ></span>
+      {{ currentStatus }}
+    </button>
+
+    <ul class="dropdown-menu dropdown-menu-end">
+      <li><button class="dropdown-item" (click)="setStatus('Active')">🟢 Automatic</button></li>
+      <li><button class="dropdown-item" (click)="setStatus('Do Not Disturb')">⛔ Do Not Disturb</button></li>
+      <li><button class="dropdown-item" (click)="setStatus('Away')">🌙 Set Away</button></li>
+      <li><button class="dropdown-item" (click)="setStatus('Invisible')">👻 Invisible</button></li>
+    </ul>
+  </div>
 
   <div class="right">
     <span class="icon">⚙️</span>
     <span class="icon">🔲</span>
-    <span class="profile">R</span>
+    <div class="profile-container">
+      <img src="https://www.google.com/u/6/ac/images/logo.gif?uid=109382100015152382239&service=google_gsuite" alt="">
+      <span class="profile">R</span>
+    </div>
   </div>
 </div>
