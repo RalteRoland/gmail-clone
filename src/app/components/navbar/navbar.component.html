@@ -8,9 +8,12 @@
   <div class="center">
     <div class="search-box">
       <span class="search-icon">🔍︎</span>
-      <input type="text"
-      placeholder="Search mail"
-      [(ngModel)]= "searchText"/>
+      <input
+        type="text"
+        placeholder="Search mail"
+        [(ngModel)]="searchText"
+        (ngModelChange)="onSearchChange()"
+      />
       <i class="bi bi-sliders2 slider"></i>
     </div>
   </div>
@@ -35,9 +38,9 @@
       </li>
       <li><button class="dropdown-item" (click)="setStatus('Do Not Disturb')">⛔ Do Not Disturb <p>Mute chat notifications</p></button>
       </li>
-      <li><button class="dropdown-item" (click)="setStatus('Away')">🌙 Set Away <p>Turn off notifications</p></button>
+      <li><button class="dropdown-item" (click)="setStatus('Away')"><i class="bi bi-circle"></i> Set Away <p></p></button>
       </li>
-      <li><button class="dropdown-item" (click)="setStatus('Invisible')">👻 Invisible <p>Appear offline</p></button>
+      <li><button class="dropdown-item" (click)="setStatus('Invisible')"><i class="bi bi-pencil"></i> Set Status <p></p></button>
       </li>
     </ul>
   </div>

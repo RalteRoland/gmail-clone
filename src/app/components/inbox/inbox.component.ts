@@ -1,4 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { SearchService } from '../../services/search.service';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-inbox',
@@ -9,6 +12,8 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class InboxComponent {
   selectAll: boolean = false;
   searchText: string = '';
+
+  constructor(private searchService: SearchService, private sanitizer: DomSanitizer) {}
 
   @Output() emailClick = new EventEmitter<any>();
 
@@ -116,6 +121,12 @@ export class InboxComponent {
 
   ];
 
+  ngOnInit() {
+    this.searchService.search$.subscribe(text => {
+      this.searchText = text;
+    });
+  }
+
   toggleStar(email: any){
     email.starred = !email.starred;
   }
@@ -141,6 +152,14 @@ export class InboxComponent {
       e.sender.toLowerCase().includes(this.searchText.toLowerCase()) ||
       e.preview.toLowerCase().includes(this.searchText.toLowerCase())
     );
+  }
+
+  highlight(text: string): SafeHtml {
+    if (!this.searchText) return text;
+    const escaped = this.searchText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // Fixed regex
+    const regex = new RegExp(`(${escaped})`, 'gi');
+    const highlighted = text.replace(regex, '<mark>$1</mark>');
+    return this.sanitizer.bypassSecurityTrustHtml(highlighted); // Return SafeHtml
   }
 
 }

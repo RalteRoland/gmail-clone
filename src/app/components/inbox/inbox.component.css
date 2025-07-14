@@ -26,6 +26,12 @@
   gap: 12px;
 }
 
+.right-tools span{
+  font-size: 12px;
+  font-weight: 500;
+  color: #858585;
+}
+
 .icon-button {
   background: none;
   border: none;
@@ -58,7 +64,7 @@
   display: flex;
   align-items: center;
   padding: 4px 12px;
-  border-bottom: #F2F6FC solid 1px;
+  border-bottom: #dbdbdb solid 1px;
   border-left: #f2f6fc6c solid 1px;
   border-right: #f2f6fc67 solid 1px;
   border-top: #f2f6fc67 solid 1px;
@@ -100,6 +106,7 @@
   color: #fbbc04;
 }
 
+
 .preview {
   color: #5f6368;
   margin-left: 8px;
@@ -138,8 +145,7 @@
   display: none;
   gap: 8px;
   background: #F2F6FC; /* Optional: soft background */
-  padding: 4px 6px;
-  border-radius: 8px;
+  padding: 4px 9px;
 }
 
 .hover-icons i {
@@ -165,4 +171,11 @@
   color: #999;
   margin-right: 6px;
   user-select: none;
+}
+
+mark {
+  background-color: #fff3a3;
+  padding: 1px 3px;
+  border-radius: 3px;
+  font-weight: 500;
 }

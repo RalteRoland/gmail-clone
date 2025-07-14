@@ -8,8 +8,8 @@
 
     <div class="right-tools">
       <span>1-50 of 100</span>
-      <button class="icon-button"><i class="bi bi-arrow-left"></i></button>
-      <button class="icon-button"><i class="bi bi-arrow-right"></i></button>
+      <button class="icon-button"><i class="bi bi-arrow-left-short"></i></button>
+      <button class="icon-button"><i class="bi bi-arrow-right-short"></i></button>
     </div>
   </div>
 
@@ -25,9 +25,9 @@
       <span class="star" [ngClass]="{ 'starred': email.starred }" (click)="toggleStar(email); $event.stopPropagation()">
         {{ email.starred ? '★' : '☆' }}
       </span>
-      <span class="sender">{{ email.sender }}</span>
-      <span class="subject">{{ email.subject }} -</span>
-      <span class="preview">{{ email.preview }}</span>
+      <span class="sender" [innerHTML]="highlight(email.sender)"></span>
+      <span class="subject" [innerHTML]="highlight(email.subject)"> - </span>
+      <span class="preview" [innerHTML]="highlight(email.preview)"></span>
       <span class="attachment" *ngIf="email.hasAttachment">📎</span>
       <span class="date">{{ email.date }}</span>
 

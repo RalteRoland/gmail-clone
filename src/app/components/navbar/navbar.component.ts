@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { SearchService } from '../../services/search.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,13 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
+
 export class NavbarComponent {
   currentStatus = 'Active';
   searchText: string = '';
+
+
+  constructor(private searchService: SearchService) {}
 
   statusColorMap: { [key: string]: string } = {
     'Active': '#34a853',
@@ -20,5 +25,9 @@ export class NavbarComponent {
 
   setStatus(status: string) {
     this.currentStatus = status;
+  }
+
+  onSearchChange() {
+    this.searchService.updateSearch(this.searchText);
   }
 }
