@@ -1,4 +1,5 @@
 .inbox-wrapper {
+  margin-top: 5px;
   margin-left: 15px;
   flex: 1;
   display: flex;
@@ -14,7 +15,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 16px;
+  padding: 8px 12px;
   background-color: #ffffff;
 }
 
@@ -49,21 +50,30 @@
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  background-color: #f2f5fa;
+  background-color: #F2F6FC;
 }
 
 .email-row {
+  font-size: 15px;
   display: flex;
   align-items: center;
-  padding: 8px 12px;
-  border-bottom: #e4e4e4 solid 1px;
+  padding: 4px 12px;
+  border-bottom: #F2F6FC solid 1px;
+  border-left: #f2f6fc6c solid 1px;
+  border-right: #f2f6fc67 solid 1px;
+  border-top: #f2f6fc67 solid 1px;
   gap: 10px;
   min-width: 0;
+  position: relative; /* Needed for absolutely positioning hover icons */
 }
 
 .email-row:hover {
-  background-color: #f1f3f4;
   cursor: pointer;
+  border-bottom: #a4a4a4 solid 1px;
+  border-left: #a4a4a4 solid 1px;
+  border-right: #a4a4a4 solid 1px;
+  border-top: #d5d5d5 solid 1px;
+  box-shadow: 1px 1px 2px rgb(182, 182, 182);
 }
 
 .sender {
@@ -77,6 +87,7 @@
   text-overflow: ellipsis;
   margin-left: 80px;
 }
+
 
 .star {
   cursor: pointer;
@@ -110,4 +121,48 @@
 .email-row.selected{
   background-color: #b1cbf8;
   box-shadow: 1px 1px 6px rgb(199, 199, 199);
+}
+
+.no-results {
+  text-align: center;
+  padding: 40px;
+  color: #888;
+  font-style: italic;
+}
+
+.hover-icons {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+  gap: 8px;
+  background: #F2F6FC; /* Optional: soft background */
+  padding: 4px 6px;
+  border-radius: 8px;
+}
+
+.hover-icons i {
+  cursor: pointer;
+  padding: 4px;
+  font-size: 16px;
+  border-radius: 50%;
+}
+
+.hover-icons i:hover {
+  background-color: #e3e3e3;
+}
+
+.email-row:hover .hover-icons {
+  display: flex;
+}
+
+.hover-ellipsis {
+  display: flex;
+  align-items: end;
+  font-size: 24px;
+  line-height: 1;
+  color: #999;
+  margin-right: 6px;
+  user-select: none;
 }

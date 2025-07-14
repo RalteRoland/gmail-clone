@@ -1,25 +1,48 @@
-<!-- Toolbar -->
-<div class="email-toolbar">
-  <button class="back-button"(click)="close.emit()">⬅️</button>
-  <button class="icon-button" title="Archive">📤</button>
-  <button class="icon-button" title="Report spam">🐞</button>
-  <button class="icon-button" title="Delete">🗑️</button>
-  <button class="icon-button" title="Mark as unread">📩</button>
-  <button class="icon-button" title="Refresh">🔁</button>
-  <!-- More icons later: Archive, Delete, etc. -->
-</div>
+<div class="email-detail-container">
 
-<!-- Header -->
-<div class="email-header">
-  <h2>{{ email.subject }}</h2>
-  <div class="email-meta">
-    <span class="sender">{{ email.sender }}</span>
-    <span class="preview">{{ email.preview }}</span>
-    <span class="date">{{ email.date }}</span>
+  <!-- Toolbar -->
+  <div class="email-toolbar">
+    <div class="icon-buttons">
+      <button class="back-button" (click)="close.emit()"><i class="bi bi-arrow-left"></i></button>
+      <button class="icon" title="Archive"><i class="bi bi-archive"></i></button>
+      <button class="icon" title="Report spam"><i class="bi bi-exclamation-circle"></i></button>
+      <button class="icon" title="Delete"><i class="bi bi-trash3"></i></button>
+      <button class="icon" title="Mark as unread"><i class="bi bi-envelope-plus"></i></button>
+      <button class="icon" title="Snooze"><i class="bi bi-clock"></i></button>
+      <button class="icon" title="Move to"><i class="bi bi-folder-symlink-fill"></i></button>
+      <button class="icon" title="Label"><i class="bi bi-bookmark"></i></button>
+      <button class="icon" title="More"><i class="bi bi-three-dots-vertical"></i></button>
+    </div>
+
+    <div class="right-tools">
+      <span>1-50 of 100</span>
+      <button class="icon-button"><i class="bi bi-arrow-left"></i></button>
+      <button class="icon-button"><i class="bi bi-arrow-right"></i></button>
+    </div>
   </div>
-</div>
 
-<!-- Email Body -->
-<div class="email-body">
-  <p>{{ email.body }}</p>
+  <!-- Email Header -->
+  <div class="email-content">
+    <div class="email-header">
+
+      <h2 class="email-subject">{{ email.subject }}</h2>
+
+      <div class="email-sender-row">
+        <i class="bi bi-person-circle avatar"></i>
+
+        <div class="sender-info">
+          <div class="sender-name">{{ email.sender }}</div>
+          <div class="sender-preview">{{ email.preview }}</div>
+        </div>
+
+        <div class="email-date">{{ email.date }}</div>
+      </div>
+    </div>
+
+    <!-- Email Body -->
+    <div class="email-body">
+      <p>{{ email.body }}</p>
+    </div>
+  </div>
+
 </div>

@@ -8,21 +8,37 @@
 
     <div class="right-tools">
       <span>1-50 of 100</span>
-      <button class="icon-button">⬅</button>
-      <button class="icon-button">➡</button>
+      <button class="icon-button"><i class="bi bi-arrow-left"></i></button>
+      <button class="icon-button"><i class="bi bi-arrow-right"></i></button>
     </div>
   </div>
 
 
   <div class="inbox-content">
-    <div class="email-row" *ngFor="let email of emails" (click)="onEmailClick(email)" [ngClass]="{'selected': email.selected}">
-      <input type="checkbox" [checked]="email.selected" (click)="toggleStar(email); $event.stopPropagation()"(change)="toggleSelected(email)" />
-      <span class="star" [ngClass]="{ 'starred': email.starred }"(click)="toggleStar(email); $event.stopPropagation()">{{ email.starred ? '★' : '☆' }}</span>
+
+    <div class="no-results" *ngIf="filteredEmails.length === 0">
+      No emails match your search.
+    </div>
+
+    <div class="email-row" *ngFor="let email of filteredEmails" (click)="onEmailClick(email)"[ngClass]="{ 'selected': email.selected }">
+      <input type="checkbox" [checked]="email.selected" (click)="toggleStar(email); $event.stopPropagation()"(change)="toggleSelected(email)"/>
+      <span class="star" [ngClass]="{ 'starred': email.starred }" (click)="toggleStar(email); $event.stopPropagation()">
+        {{ email.starred ? '★' : '☆' }}
+      </span>
       <span class="sender">{{ email.sender }}</span>
-      <span class="subject">{{ email.subject }}</span>
+      <span class="subject">{{ email.subject }} -</span>
       <span class="preview">{{ email.preview }}</span>
       <span class="attachment" *ngIf="email.hasAttachment">📎</span>
       <span class="date">{{ email.date }}</span>
+
+        <!-- 🔘 Hover Icons -->
+      <div class="hover-icons">
+        <span class="hover-ellipsis">…</span>
+        <i class="bi bi-archive" title="Archive"></i>
+        <i class="bi bi-trash" title="Delete"></i>
+        <i class="bi bi-envelope-dash" title="Mark as unread"></i>
+        <i class="bi bi-clock" title="Snooze"></i>
+      </div>
     </div>
   </div>
 

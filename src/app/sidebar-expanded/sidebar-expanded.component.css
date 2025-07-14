@@ -1,6 +1,6 @@
 .expandable-bar {
   width: 250px;
-  background-color: #f1f3f4;
+  background-color: #F8FAFD;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -11,23 +11,33 @@
 
 }
 
-.compose-btn{
-  background-color: #bcdfff;
+.compose-btn {
+  background-color: #c9e3fd;
   display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 8px;
   border: none;
   width: 50%;
-  font-weight: bold;
-  padding: 20px;
+  height: 55px;
+  padding: 15px;
   border-radius: 15px;
   margin-bottom: 15px;
 }
+
 
 .compose-btn:hover{
   background-color: #a0c4f7;
   cursor: pointer;
 }
 
+.compose-pen {
+  color: #000000;
+}
+
 .menu-section{
+  display: flex;
+  gap: 15px;
   padding: 8px 12px;
   border-radius: 20px;
   transition: background-color 0.2s ease;

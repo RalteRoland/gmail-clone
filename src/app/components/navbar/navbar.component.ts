@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-navbar',
@@ -8,6 +9,7 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
   currentStatus = 'Active';
+  searchText: string = '';
 
   statusColorMap: { [key: string]: string } = {
     'Active': '#34a853',

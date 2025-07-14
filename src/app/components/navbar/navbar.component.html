@@ -1,12 +1,16 @@
 <div class="navbar">
   <div class="left">
-    <img src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x_r5.png" alt="Gmail Logo" height="30" />
+    <a href="" target="">
+      <img src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x_r5.png" alt="Gmail Logo" height="30" />
+    </a>
   </div>
 
   <div class="center">
     <div class="search-box">
       <span class="search-icon">🔍︎</span>
-      <input type="text" placeholder="Search mail" />
+      <input type="text"
+      placeholder="Search mail"
+      [(ngModel)]= "searchText"/>
       <i class="bi bi-sliders2 slider"></i>
     </div>
   </div>
