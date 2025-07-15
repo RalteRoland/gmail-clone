@@ -139,17 +139,23 @@
 
 .hover-icons {
   position: absolute;
+  border: none;
   right: 12px;
   top: 50%;
   transform: translateY(-50%);
   display: none;
   gap: 8px;
-  background: #F2F6FC; /* Optional: soft background */
-  padding: 4px 9px;
+  background: #F2F6FC;
 }
 
+
 .hover-icons i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
+  height: 35px;
+  width: 32px;
   padding: 4px;
   font-size: 16px;
   border-radius: 50%;
@@ -165,12 +171,12 @@
 
 .hover-ellipsis {
   display: flex;
-  align-items: end;
+  align-items: center;
   font-size: 24px;
   line-height: 1;
+  margin-left: none;
   color: #999;
   margin-right: 6px;
-  user-select: none;
 }
 
 mark {

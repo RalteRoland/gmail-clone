@@ -6,7 +6,23 @@
   <div class="menu-section"><i class="bi bi-clock"></i>Snooze</div>
   <div class="menu-section"><i class="bi bi-send"></i>Sent</div>
   <div class="menu-section"><i class="bi bi-file-earmark"></i>Draft</div>
-  <div class="menu-section">More</div>
+  <div class="menu-section" (click)="toggleShowMore()" [ngClass]="{ 'active-less': showMore }">
+    <i class="bi" [ngClass]="showMore ? 'bi bi-arrow-up-short' : 'bi bi-arrow-down-short'"></i>
+    {{ showMore ? 'Less' : 'More' }}
+  </div>
+
+
+  <div *ngIf="showMore">
+    <div class="menu-section"><i class="bi bi-bookmark-star"></i>Important</div>
+    <div class="menu-section"><i class="bi bi-send-exclamation"></i>Scheduled</div>
+    <div class="menu-section"><i class="bi bi-envelope-plus"></i>All Mail</div>
+    <div class="menu-section"><i class="bi bi-exclamation-circle"></i>Spam</div>
+    <div class="menu-section"><i class="bi bi-trash"></i>Trash</div>
+    <div class="menu-section"><i class="bi bi-arrow-bar-right"></i>Categories</div>
+    <div class="menu-section"><i class="bi bi-gear"></i>Manage Labels</div>
+    <div class="menu-section"><i class="bi bi-plus-lg"></i>Create New Label</div>
+  </div>
+
 
   <div class="label-header">Labels</div>
   <div class="label-item"><i class="bi bi-tag-fill"></i> To do</div>

@@ -9,8 +9,13 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class SidebarExpandedComponent {
   @Output() compose = new EventEmitter<void>();
+  showMore : boolean = false;
 
   onComposeClick() {
     this.compose.emit();
+  }
+
+  toggleShowMore() {
+    this.showMore = !this.showMore;
   }
 }

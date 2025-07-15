@@ -1,7 +1,6 @@
 .expandable-bar {
-  width: 250px;
+  width: 240px;
   background-color: #F8FAFD;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   font-size: 15px;
@@ -37,8 +36,11 @@
 
 .menu-section{
   display: flex;
-  gap: 15px;
-  padding: 8px 12px;
+  gap: 12px;
+  padding: 5px 12px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #000000;
   border-radius: 20px;
   transition: background-color 0.2s ease;
   cursor: pointer;
@@ -49,7 +51,7 @@
 }
 
 .menu-section.active {
-  background-color: #d2e3fc; /* Gmail-like blue */
+  background-color: #d2e3fc;
   color: #000000;
   font-weight: bold;
 }
@@ -69,4 +71,10 @@
   padding-left: 12px;
   margin: 16px 0px;
   font-weight: bold;
+}
+
+.active-less {
+  background-color: #eaeaeaaf;
+  font-weight: bold;
+  border-radius: 20px;
 }
