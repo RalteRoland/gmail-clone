@@ -3,6 +3,7 @@
   <div class="main-area">
     <app-navbar></app-navbar>
 
+
     <div class="content-area">
       <app-sidebar-expanded *ngIf="isExpandedSidebar" (compose)="openComposePopup()"></app-sidebar-expanded>
       <div class="inbox-wrapper">
@@ -17,23 +18,8 @@
 
       <app-right-sidebar></app-right-sidebar>
 
-      <div class="compose-popup" *ngIf="isComposeOpen">
-        <div class="compose-header">
-          <span>New Message</span>
-          <button (click)="closeCompose()" class="close-btn">✖</button>
-        </div>
+      <app-compose *ngIf="isComposeOpen" (close)="closeCompose()"></app-compose>
 
-        <div class="compose-body">
-          <input type="text" placeholder="To" />
-          <input type="text" placeholder="Subject" />
-          <textarea placeholder=""></textarea>
-        </div>
-
-        <div class="compose-footer">
-          <button class="send-btn">Send</button>
-        </div>
-
-      </div>
     </div>
   </div>
 </div>

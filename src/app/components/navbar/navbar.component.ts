@@ -1,33 +1,36 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { SearchService } from '../../services/search.service';
 
 @Component({
-  selector: 'app-navbar',
   standalone: false,
+  selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css'
+  styleUrls: ['./navbar.component.css']
 })
-
 export class NavbarComponent {
-  currentStatus = 'Active';
   searchText: string = '';
+
+  selectedStatus = {
+    label: 'Active',
+    color: '#34a853',
+    subtext: 'Based on chat activity'
+  };
+
+  statusOptions = [
+    { label: 'Active', color: '#34a853', subtext: 'Based on chat activity' },
+    { label: 'Do Not Disturb', color: '#ea4335', subtext: 'Mute chat notifications' },
+    { label: 'Away', color: '#fbbc04', subtext: 'Appear away' },
+    { label: 'Invisible', color: '#80868b', subtext: 'Hide online presence' }
+  ];
 
 
   constructor(private searchService: SearchService) {}
 
-  statusColorMap: { [key: string]: string } = {
-    'Active': '#34a853',
-    'Do Not Disturb': '#ea4335',
-    'Away': '#fbbc04',
-    'Invisible': '#80868b'
-  };
-
-  setStatus(status: string) {
-    this.currentStatus = status;
-  }
-
   onSearchChange() {
     this.searchService.updateSearch(this.searchText);
+  }
+
+  onStatusChange(status: any) {
+    this.selectedStatus = status;
   }
 }

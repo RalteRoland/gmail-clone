@@ -18,32 +18,43 @@
     </div>
   </div>
 
-  <!-- STATUS DROPDOWN -->
-  <div class="dropdown">
-    <button
-      class="status-button dropdown-toggle"
-      type="button"
-      data-bs-toggle="dropdown"
-      aria-expanded="false"
-    >
-      <span
-        class="status-dot"
-        [ngStyle]="{ 'background-color': statusColorMap[currentStatus] }"
-      ></span>
-      {{ currentStatus }}
-    </button>
+  <!-- NAVBAR STATUS DROPDOWN using ng-select -->
+  <div class="status-dropdown-wrapper">
+    <ng-select
+      [items]="statusOptions"
+      [(ngModel)]="selectedStatus"
+      bindLabel="label"
+      placeholder=""
+      [clearable]="false"
+      [searchable]="false"
+      (change)="onStatusChange($event)"
+      >
 
-    <ul class="dropdown-menu dropdown-menu-end">
-      <li><button class="dropdown-item" (click)="setStatus('Active')">🟢 Automatic <p>Based on chat activity</p> </button>
-      </li>
-      <li><button class="dropdown-item" (click)="setStatus('Do Not Disturb')">⛔ Do Not Disturb <p>Mute chat notifications</p></button>
-      </li>
-      <li><button class="dropdown-item" (click)="setStatus('Away')"><i class="bi bi-circle"></i> Set Away <p></p></button>
-      </li>
-      <li><button class="dropdown-item" (click)="setStatus('Invisible')"><i class="bi bi-pencil"></i> Set Status <p></p></button>
-      </li>
-    </ul>
+      <ng-template ng-label-tmp let-item="item">
+        <button type="button" class="status-button">
+          <span class="status-dot" [ngStyle]="{ 'background-color': item.color }"></span>
+          {{ item.label }}
+          <span class="status-arrow">▼</span>
+        </button>
+      </ng-template>
+
+
+      <ng-template ng-option-tmp let-item="item">
+        <div class="status-dot-menu">
+          <div class="dot-container">
+            <span class="status-dot-item" [ngStyle]="{ 'background-color': item.color }"></span>
+          </div>
+          <div class="status-label-text">
+            <div class="status-label-main">{{ item.label }}</div>
+            <div class="status-label-subtext" *ngIf="item.subtext">{{ item.subtext }}</div>
+          </div>
+        </div>
+      </ng-template>
+
+
+    </ng-select>
   </div>
+
 
   <div class="right">
     <i class="bi bi-question-circle icon" title="Support"></i>

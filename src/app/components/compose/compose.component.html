@@ -1,0 +1,49 @@
+<div class="compose-popup">
+  <form [formGroup]="composeForm" (ngSubmit)="onSubmit()">
+
+    <!-- Header -->
+    <div class="compose-header">
+      <span class="title">New Message</span>
+      <div class="header-icons">
+        <i class="bi bi-dash"></i>
+        <i class="bi bi-square"></i>
+        <i class="bi bi-x-lg" (click)="onClose()"></i>
+      </div>
+    </div>
+
+    <!-- To Field -->
+    <div class="compose-field to-field">
+      <label>To</label>
+      <ng-select
+        [items]="recipients"
+        bindLabel="email"
+        bindValue="email"
+        formControlName="to"
+        [multiple]="true"
+        [clearable]="false"
+        placeholder=""
+      ></ng-select>
+      <span class="cc-bcc">Cc Bcc</span>
+    </div>
+
+    <!-- Subject Field -->
+    <div class="compose-field">
+      <input type="text" formControlName="subject" placeholder="Subject" />
+    </div>
+
+    <!-- Body -->
+    <div class="compose-field">
+      <textarea rows="12" placeholder="Message" formControlName="body"></textarea>
+    </div>
+
+    <!-- Footer -->
+    <div class="compose-footer">
+      <button type="submit" class="send-btn">Send</button>
+      <!-- Add icons if needed -->
+      <i class="bi bi-paperclip"></i>
+      <i class="bi bi-image"></i>
+      <i class="bi bi-emoji-smile"></i>
+      <i class="bi bi-three-dots"></i>
+    </div>
+  </form>
+</div>
