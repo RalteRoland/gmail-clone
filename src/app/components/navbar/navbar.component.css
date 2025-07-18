@@ -100,7 +100,7 @@
 }
 
 .question-icon:hover .question-inner {
-  background-color: #d6d6d6 /* or any hover color you want */
+  background-color: #d6d6d6
 }
 
 
@@ -122,6 +122,7 @@
   margin-right: 10px;
 }
 
+
 .status-button {
   display: flex;
   align-items: center;
@@ -136,6 +137,10 @@
   cursor: pointer;
   max-width: 100%;
   white-space: nowrap;
+}
+
+.status-button:hover {
+  background-color: #d3e3ee;
 }
 
 .status-dot {
@@ -177,33 +182,32 @@
   border-radius: 50%;
 }
 
-/* Text next to dot */
 .status-label-text {
   display: flex;
   flex-direction: column;
   line-height: 1.2;
 }
 
-/* Label */
+
 .status-label-main {
   font-weight: 500;
   font-size: 14px;
   color: #202124;
 }
 
-/* Subtext */
+
 .status-label-subtext {
   font-size: 12px;
   color: #5f6368;
 }
 
-/* Dropdown panel width/height — fixed & no scroll */
+
 ::ng-deep .ng-dropdown-panel {
   background-color: #e9eef6;
   border: none;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
   border-radius: 8px;
-  min-width: 240px;
+  min-width: 280px;
   width: 260px;
   margin-top: 10px;
 }

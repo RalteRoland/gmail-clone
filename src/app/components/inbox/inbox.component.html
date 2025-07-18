@@ -15,7 +15,6 @@
 
 
   <div class="inbox-content">
-
     <div class="no-results" *ngIf="filteredEmails.length === 0">
       No emails match your search.
     </div>
@@ -26,12 +25,12 @@
         {{ email.starred ? '★' : '☆' }}
       </span>
       <span class="sender" [innerHTML]="highlight(email.sender)"></span>
-      <span class="subject" [innerHTML]="highlight(email.subject)"> - </span>
+      <span class="subject" [innerHTML]="highlight(email.subject)"></span>
       <span class="preview" [innerHTML]="highlight(email.preview)"></span>
       <span class="attachment" *ngIf="email.hasAttachment">📎</span>
       <span class="date">{{ email.date }}</span>
 
-        <!-- 🔘 Hover Icons -->
+        <!-- Hover Icons -->
       <div class="hover-icons">
         <span class="hover-ellipsis">…</span>
         <i class="bi bi-archive" title="Archive"></i>

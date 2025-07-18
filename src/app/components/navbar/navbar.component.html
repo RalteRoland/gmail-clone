@@ -24,11 +24,10 @@
       [items]="statusOptions"
       [(ngModel)]="selectedStatus"
       bindLabel="label"
-      placeholder=""
       [clearable]="false"
       [searchable]="false"
       (change)="onStatusChange($event)"
-      >
+    >
 
       <ng-template ng-label-tmp let-item="item">
         <button type="button" class="status-button">

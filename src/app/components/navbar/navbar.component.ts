@@ -7,6 +7,7 @@ import { SearchService } from '../../services/search.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
+
 export class NavbarComponent {
   searchText: string = '';
 
@@ -20,7 +21,8 @@ export class NavbarComponent {
     { label: 'Active', color: '#34a853', subtext: 'Based on chat activity' },
     { label: 'Do Not Disturb', color: '#ea4335', subtext: 'Mute chat notifications' },
     { label: 'Away', color: '#fbbc04', subtext: 'Appear away' },
-    { label: 'Invisible', color: '#80868b', subtext: 'Hide online presence' }
+    { label: 'Invisible', color: '#80868b', subtext: 'Hide online presence' },
+    { label: 'Chat Notification Setting', color: '', subtext: '' }
   ];
 
 

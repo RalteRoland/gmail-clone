@@ -50,7 +50,6 @@
   background-color: #dadada;
 }
 
-
 .inbox-content {
   flex: 1;
   overflow-y: auto;
@@ -92,8 +91,8 @@
   overflow: hidden;
   text-overflow: ellipsis;
   margin-left: 80px;
+  color: #5f6368;
 }
-
 
 .star {
   cursor: pointer;
@@ -116,7 +115,6 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
 
 .date,
 .attachment {
